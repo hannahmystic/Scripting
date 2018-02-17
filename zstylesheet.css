@@ -16,14 +16,17 @@ h2{
 
 body{
     background: linear-gradient(#3f0f9e, #a9a7cb);
+    height: 100vh;
 }
 
 .title{
     width: 54rem;
     margin: 0 auto;
+    padding: 0;
 }
 
 .subtitle{
     width: 56rem;
     margin: 0 auto;
+    padding: 0;
 }
