@@ -1,4 +1,7 @@
 *{ box-sizing: border-box; }
+.container {
+    display: flex; /* or inline-flex */
+  }
 
 h1, h2{
     font-family: 'Pacifico', cursive;
@@ -26,7 +29,64 @@ body{
 }
 
 .subtitle{
-    width: 56rem;
+    width: 58rem;
     margin: 0 auto;
     padding: 0;
 }
+
+/*
+ ______________________________________
+|                                      |
+|             FLEX-BOX IMAGES          | 
+|______________________________________|
+*/
+
+
+.pictures img{
+    display: flex;
+    /*flex-wrap: nowrap;*/
+    flex-flow: row wrap;
+
+    justify-content: space-between;
+    align-items: baseline;
+    align-content: flex-end;
+    height: 29.3vh;
+    max-width: 9rem;
+    margin: 0;
+    padding: .1rem;
+    }   
+  
+
+/*
+.pictures img{
+    display: -ms-flexbox;
+    -ms-flex-wrap: wrap;
+    -ms-flex-direction: column;
+    -webkit-flex-flow: row wrap;
+    flex-flow: row wrap;
+    display: -webkit-box;
+    display: flex;
+
+    justify-content: space-between;
+    align-items: baseline;
+    align-content: flex-end;
+
+   
+    max-height: 29.3vh;
+    max-width: 9rem;
+    width: 100%;
+    height: auto;
+    vertical-align: middle;
+    margin: 0;
+    padding: .1rem;
+} 
+*/   
+
+/*
+.anna {flex: .34404; }
+.ariel{ flex: .66939; }
+.aurora{ flex: .57074; }
+.belle{ flex: .41061; }
+.cinderella{ flex: .66994; }
+.mulan { flex: .30965; }
+*/

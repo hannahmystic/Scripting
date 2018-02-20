@@ -1,0 +1,25 @@
+var arielAudio = document.getElementById("audio/ariel.mp3");
+var annaAudio = document.getElementById("audio/anna.mp3");
+var auroraAudio = document.getElementById("audio/aurora.mp3");
+var belleAudio = document.getElementById("audio/belle.mp3");
+var cinderellaAudio = document.getElementById("audio/cinderella.mp3");
+var jasmineAudio = document.getElementById("audio/jasmine.mp3");
+var tianaAudio = document.getElementById("audio/tiana.mp3");
+var rapunzelAudio = document.getElementById("audio/rapunzel.mp3");
+var mulanAudio = document.getElementById("audio/mulan.mp3");
+var pocahontasAudio = document.getElementById("audio/pocahontas.mp3");
+var moanaAudio = document.getElementById("audio/moana.mp3");
+var snowwhiteAudio = document.getElementById("audio/snowwhite.mp3");
+
+mulan.addEventListener('click', mulanAudio.play, false);
+ariel.addEventListener('click', arielAudio.play, flase);
+anna.addEventListener('click', annaAudio.play, flase);
+aurora.addEventListener('click', auroraAudio.play, flase);
+belle.addEventListener('click', belleAudio.play, flase);
+cinderella.addEventListener('click', cinderellaAudio.play, flase);
+jasmine.addEventListener('click', jasmineAudio.play, flase);
+tiana.addEventListener('click', tianaAudio.play, flase);
+rapunzel.addEventListener('click', rapunzelAudio.play, flase);
+pocahontas.addEventListener('click', pocahontasAudio.play, flase);
+moana.addEventListener('click', moanaAudio.play, flase);
+snowwhite.addEventListener('click', snowwhiteAudio.play, flase);
