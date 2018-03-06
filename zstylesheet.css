@@ -1,59 +1,205 @@
 *{ box-sizing: border-box; }
-.container {
-    display: flex; /* or inline-flex */
-  }
 
 h1, h2{
-    font-family: 'Pacifico', cursive;
+    font-family: 'Ultra', serif;
     text-align: center;
-    color: #040039;
+    color: #2f3d6a;
 }
 
 h1{
-    font-size: 3.5rem;
+    /* font-size: 2.5rem; */
+    font-size: 2.9vw;
+    margin: 0;
+    padding: 0;
 }
 
 h2{
-    font-size: 2.8rem;
+    /* font-size: 1.875rem; */
+    font-size: 2.2vw;
+    margin: 0;
+    padding: 0;
+    text-align: left;
+    font-weight: normal;
 }
 
-body{
-    background: linear-gradient(#3f0f9e, #a9a7cb);
-    height: 100vh;
+h3{
+    font-family: "Arial Rounded MT Bold", "Helvetica Rounded", Arial, sans-serif;
+    font-size: 1.1rem;
+    color: white;
+    margin: 0 auto;
+    padding: 0;
+    border: 0;
+    width: 4rem;
+    text-align: center;
+    font-weight: normal;
+}
+
+h4{
+    font-size: 2.6rem;
+    color: white;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    width: 4rem;
+    text-align: center;
+    font-weight: bold;
+    max-height: 2.6rem;
+}
+
+html{
+    background: url("images/background.jpg") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+/* From https://css-tricks.com/perfect-full-page-background-image/ */
+
+/* body {
+    background-image: url("images/background.jpg");
+    background-color: #e2e5f4;
+    background-repeat: no-repeat;
+    background-size: cover;
+ } */
+
+
+
+ /*_____________________________________
+|                                      |
+|                THE GRID              | 
+|______________________________________|
+*/
+.container{
+    height: 22.25rem;
+    display: grid;
+    grid-template-columns: 15.3% 12.5% 48% auto;
+    grid-template-rows: 1.2fr 1fr 1fr 1fr;
+    grid-gap: 1rem 1rem;
+    grid-template-areas:
+        '. . . help'
+        '. title title .'
+        '. circle subtitle .'
+        '. circle inputs .';
+
 }
 
 .title{
-    width: 54rem;
-    margin: 0 auto;
-    padding: 0;
+    /* width: 54rem; */
+    margin: 0;
+    padding: 0 0 1rem .5rem;
+
+    justify-self: start;
+    align-self: end;
+    grid-area: title;
 }
 
 .subtitle{
-    width: 58rem;
-    margin: 0 auto;
+    /* width: 58rem; */
+    margin: 0;
     padding: 0;
+    padding-left: 2rem;
+    grid-area: subtitle;
 }
 
-/*
- ______________________________________
+.help{
+    background-color: #32004b;
+    width: 4rem;
+    height: 4rem;
+    border-radius: .625rem;
+    opacity: .55;
+    padding-right: 4rem;
+
+    justify-self: end;
+    align-self: center;
+    grid-area: help
+}
+
+.circle, .circle img{
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+.circle{
+    grid-area: circle;
+    max-width: 10.6rem;
+}
+
+.inputs{
+    grid-area: inputs;
+    padding-left: 1rem;
+}
+
+input{
+    width: 8rem;
+    height: 2rem;
+    border-radius: 1rem;
+    display: inline-block;
+    padding-left: 1rem;
+}
+
+/*_____________________________________
+|                                      |
+|          Overlay Descriptions        | 
+|______________________________________|
+*/
+
+/* WHEN THE TEXT IS SUBMITTED, THE ANIMATION PLAYS, 
+AND DISPLAY IS SET TO 'GRID'.
+DISPLAY: GRID; IS WHAT MAKES IT WORK. */
+
+#overlay {
+    position: fixed; /* Sit on top of the page content */
+    display: none; /* Hidden by default */
+    width: 25rem; 
+    height: 25rem; 
+    top: 0; 
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #c3e4ed;
+    border-radius: 1rem;
+    z-index: 2; /* Specify a stack order in case you're using a different order for other elements
+    cursor: pointer; Add a pointer on hover */
+}
+
+.overlayGrid{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: 25% auto;
+    grid-gap: 1rem 1rem;
+    grid-template-areas:
+        'title title'
+        'picture desc'; 
+}
+
+/* Overlay learned from https://www.w3schools.com/howto/howto_css_overlay.asp */
+
+
+
+
+/*_____________________________________
 |                                      |
 |             FLEX-BOX IMAGES          | 
 |______________________________________|
 */
 
 
-.pictures img{
+.pictures{
     display: flex;
     /*flex-wrap: nowrap;*/
     flex-flow: row wrap;
 
-    justify-content: space-between;
+    /* justify-content: space-between;
     align-items: baseline;
     align-content: flex-end;
     height: 29.3vh;
     max-width: 9rem;
     margin: 0;
-    padding: .1rem;
+    padding: .1rem; */
     }   
   
 
