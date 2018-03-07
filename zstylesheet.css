@@ -86,7 +86,7 @@ html{
 .title{
     /* width: 54rem; */
     margin: 0;
-    padding: 0 0 1rem .5rem;
+    padding: 0 0 1rem 0;
 
     justify-self: start;
     align-self: end;
@@ -134,9 +134,40 @@ input{
     width: 8rem;
     height: 2rem;
     border-radius: 1rem;
-    display: inline-block;
     padding-left: 1rem;
 }
+
+#submitButton{
+    background-color: #fce6ff;
+}
+
+#myForm{
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    flex: row;
+    -webkit-flex-flow: row wrap;
+    flex-flow: row wrap;
+}
+
+.control{
+    width: 8.1rem;
+    margin: 0;
+}
+
+.circleTransition{
+    /*max-width: 10.6rem;
+    max-height:10.6rem;
+    */
+    border: 0;
+    margin: 0;
+    padding: 0;
+    transition: 2s ease-in-out .5s;
+    transform-origin: 50% 37%;
+    transform: rotate(1800deg);
+  }
 
 /*_____________________________________
 |                                      |

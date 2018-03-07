@@ -82,10 +82,8 @@ function handleFormSubmit(event){
 
   //DIRECTIONS FOR APPLYING TO LOADING CIRCLE
   //THIS IS THE CSS
-  .circle img{
-    transition: 2s ease-in-out .5s;
-    transform: rotateX(1800deg);
-  }
+  var circle = document.getElementById('circle');
+  circle.classList.add('circleTransition');
 
 }
 
