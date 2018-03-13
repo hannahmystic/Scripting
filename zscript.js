@@ -80,10 +80,39 @@ function handleFormSubmit(event){
   console.log(AstroSign);
 
 
-  //DIRECTIONS FOR APPLYING TO LOADING CIRCLE
-  //THIS IS THE CSS
-  var circle = document.getElementById('circle');
+  //SPIN THE LOADING CIRCLE
+  var circle = document.getElementById('circleImage');
   circle.classList.add('circleTransition');
+
+  //MAKE CONTENT FADE OUT
+  var container = document.getElementById('container');
+  container.classList.add('containerTransition');
+
+
+  //Put the right content in the overlay
+  var overlay = document.getElementById('overlay');
+
+  var pic = document.createElement('img');
+  var title = document.createElement('h3');
+  var desc = document.createElement('p');
+
+
+  if(AstroSign == "Ari"){
+
+  }
+  else if(AstroSign == "Pis"){
+
+  }
+
+
+  document.overlay.appendChild('pic');
+  document.overlay.appendChild('title');
+  document.overlay.appendChild('desc');
+
+
+  //MAKE OVERLAY FADE IN
+  overlay.style.display = 'grid';
+  overlay.classList.add('overlayTransition');
 
 }
 
@@ -95,19 +124,7 @@ form.addEventListener('submit', handleFormSubmit, false);
 
 
 
-function showWindow(AstroSign){
-    showOverlay();
 
-}
-
-
-function showOverlay() {
-    document.getElementById("overlay").style.display = "block";
-}
-
-function hideOverlay() {
-    document.getElementById("overlay").style.display = "none";
-}
 
 
 
