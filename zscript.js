@@ -1,15 +1,20 @@
-var arielAudio = document.getElementById("audio/ariel.mp3");
-var annaAudio = document.getElementById("audio/anna.mp3");
-var auroraAudio = document.getElementById("audio/aurora.mp3");
-var belleAudio = document.getElementById("audio/belle.mp3");
-var cinderellaAudio = document.getElementById("audio/cinderella.mp3");
-var jasmineAudio = document.getElementById("audio/jasmine.mp3");
-var tianaAudio = document.getElementById("audio/tiana.mp3");
-var rapunzelAudio = document.getElementById("audio/rapunzel.mp3");
-var mulanAudio = document.getElementById("audio/mulan.mp3");
-var pocahontasAudio = document.getElementById("audio/pocahontas.mp3");
-var moanaAudio = document.getElementById("audio/moana.mp3");
-var snowwhiteAudio = document.getElementById("audio/snowwhite.mp3");
+var arielAudio = document.getElementById("arielAudio");
+var annaAudio = document.getElementById("annaAudio");
+var auroraAudio = document.getElementById("auroraAudio");
+var belleAudio = document.getElementById("belleAudio");
+var cinderellaAudio = document.getElementById("cinderellaAudio");
+var jasmineAudio = document.getElementById("jasmineAudio");
+var tianaAudio = document.getElementById("tianaAudio");
+var rapunzelAudio = document.getElementById("rapunzelAudio");
+var mulanAudio = document.getElementById("mulanAudio");
+var pocahontasAudio = document.getElementById("pocahontasAudio");
+var moanaAudio = document.getElementById("moanaAudio");
+var snowwhiteAudio = document.getElementById("snowwhiteAudio");
+
+
+var overlay = document.getElementById('overlay');
+var circle = document.getElementById('circleImage');
+var song;
 
 
 var name_el = document.getElementById('name');
@@ -19,6 +24,7 @@ var birthday_el = document.getElementById('birthday');
 //const form = document.forms['myForm'];
 
 function handleFormSubmit(event){
+
     event.preventDefault();
 
     const inputDate = document.getElementById('date');
@@ -48,7 +54,7 @@ function handleFormSubmit(event){
     console.log('Year: ${myDate.getUTCFullYear()}');
     console.groupEnd();
 
-    var whichMonth = myDate.getUTCMonth();
+    var whichMonth = myDate.getUTCMonth()+1;
     var whichDayOfMonth = myDate.getUTCDate();
 
     //THE ZODIAC ALGORITHM
@@ -81,7 +87,6 @@ function handleFormSubmit(event){
 
 
   //SPIN THE LOADING CIRCLE
-  var circle = document.getElementById('circleImage');
   circle.classList.add('circleTransition');
 
   //MAKE CONTENT FADE OUT
@@ -90,37 +95,172 @@ function handleFormSubmit(event){
 
 
   //Put the right content in the overlay
-  var overlay = document.getElementById('overlay');
-
-  var pic = document.createElement('img');
-  var title = document.createElement('h3');
+  var pic = new Image();
+      pic.id = 'pic';
+  var title = document.createElement('H3');
+      title.id = 'title';
   var desc = document.createElement('p');
+      desc.id = 'desc';
 
 
-  if(AstroSign == "Ari"){
-
+  if(AstroSign == 'Ari'){
+    pic.src = 'images/mulan2.png';
+    pic.alt = 'You are Mulan';
+    song = mulanAudio;
+    var titleContent = document.createTextNode(name_el.value + ', you are Mulan');
+    var pContent = document.createTextNode('As an Aries, you are independent and courageous. Fueled by fire and the will to achieve, you are capable of accomplishing anything. Like Mulan, you are a trailblazer who doesn’t let others hold you back. Keep being fearless and fighting for your beliefs.');
   }
-  else if(AstroSign == "Pis"){
 
+  else if(AstroSign == 'Pis'){
+    pic.src = 'images/aurora.png';
+    pic.alt = 'You are Aurora';
+    song = auroraAudio;
+    var titleContent = document.createTextNode( name_el.value + ', you are Aurora');
+    var pContent = document.createTextNode('The Pisces is sometimes seen as an otherworldly being. Sensitive and reserved, you enjoy daydreaming and escaping from reality. The introverted Aurora didn’t mind growing up in a forest cottage with only three fairies and some local animals for company, and spent the time living in her imagination. You would probably also enjoy some time away from your busy life, going with the flow and singing to the birds.');
+  }
+  else if(AstroSign == 'Tau'){
+    pic.src = 'images/snowwhite2.png';
+    pic.alt = 'You are Snow White';
+    song = snowwhiteAudio;
+    var titleContent = document.createTextNode( name_el.value + ', you are Snow White');
+    var pContent = document.createTextNode('Though you may be sweet, you are not to be underestimated. The Taurus is easy-going but resilient, with a strong sense of values. Like Snow White, you are persistent and do not give up when faced with negativity. You seek security and pursue a good life for yourself. Using patience and your warm heart, you always get the job done.');
+  }
+  else if(AstroSign == 'Gem'){
+    pic.src = 'images/belle.png';
+    pic.alt = 'You are Belle';
+    song = belleAudio;
+    var titleContent = document.createTextNode( name_el.value + ', you are Belle');
+    var pContent = document.createTextNode('The Gemini is vibrant and versatile. You work well with others, even those who can be as difficult as a Beast, and you excel at communication. Like Belle, you are adaptive and intellectual, and you are consistently exploring places, people, and ideas to learn more. You crave a life of diverse experiences, and along the way, you make sure to stay true to yourself.');
+  }
+  else if(AstroSign == 'Leo'){
+    pic.src = 'images/jasmine2.png';
+    pic.alt = 'You are Jasmine';
+    song = jasmineAudio;
+    var titleContent = document.createTextNode( name_el.value + ', you are Jasmine');
+    var pContent = document.createTextNode('Leos are not afraid to question the rules, especially if they feel they are being held back from living their best life. Like Jasmine, you will not let yourself be pushed around, and make sure your voice is heard. Some may see you as a drama queen, but mainly, you carry an air of dignity and charm. People are naturally drawn to you, and this makes you a great leader.');
+  }
+  else if(AstroSign == 'Can'){
+    pic.src = 'images/rapunzel2.png';
+    pic.alt = 'You are Rapunzel';
+    song = rapunzelAudio;
+    var titleContent = document.createTextNode( name_el.value + ', you are Rapunzel');
+    var pContent = document.createTextNode('Cancers are known to be nurturers and healers, and though you may not have the help of magic hair to do it for you, you know how to help those you love, and care about them deeply. You use your emotions to channel your imagination, and love to be creative. You are compassionate and see the good in others, and though sometimes cautious and sensitive, you are always strong-willed.');
+  }
+  else if(AstroSign == 'Vir'){
+    pic.src = 'images/cinderella.png';
+    pic.alt = 'You are Cinderella';
+    song = cinderellaAudio;
+    var titleContent = document.createTextNode( name_el.value + ', you are Cinderella');
+    var pContent = document.createTextNode('Cinderella is often misunderstood as a love-obsessed airhead, but those familiar with her story know that she was lead by a kind, strong heart and fierce resilience. As a Virgo, you can be modest and shy, but you are led by a desire to do good work, and enjoy bettering yourself and those around you. You are organized and logical, but you always leave room for fun.');
+  }
+  else if(AstroSign == 'Lib'){
+    pic.src = 'images/pocahontas2.png';
+    pic.alt = 'You are Pocahontas';
+    song = pocahontasAudio;
+    var titleContent = document.createTextNode( name_el.value + ', you are Pocahontas');
+    var pContent = document.createTextNode('Libra is represented by the scales, which symbolize balance. Like Pocahontas, you inspire others to seek harmony and cooperation. You are hardworking and have big goals. Though you avoid conflict when possible, you value fairness, and are strategic when you need to get something done.');
+  }
+  else if(AstroSign == 'Sco'){
+    pic.src = 'images/moana.png';
+    pic.alt = 'You are Moana';
+    song = moanaAudio;
+    var titleContent = document.createTextNode( name_el.value + ', you are Moana');
+    var pContent = document.createTextNode('Scorpios are often seen as intense, and question everything. Like Moana, they are the investigators of the zodiac. Your combination of determination and curiosity means you are always looking for answers and working towards a goal. You are a master of your own life, and passionately move past all that stands in your way.');
+  }
+  else if(AstroSign == 'Sag'){
+    pic.src = 'images/ariel.png';
+    pic.alt = 'You are Ariel';
+    song = arielAudio;
+    var titleContent = document.createTextNode( name_el.value + ', you are Ariel');
+    var pContent = document.createTextNode('You are a Sagittarius with a positive outlook and a restless, vibrant personality, just like everyone’s favorite little mermaid. Sagittarius is the worldly adventurer of the zodiac. You dream big and chase the impossible, even if it means taking some risks. You love meeting new people, and will go to every length necessary to answer your life’s questions (even if you procrastinate a bit).');
+  }
+  else if(AstroSign == 'Aqu'){
+    pic.src = 'images/anna.png';
+    pic.alt = 'You are Anna';
+    song = annaAudio;
+    var titleContent = document.createTextNode( name_el.value + ', you are Anna');
+    var pContent = document.createTextNode('Despite your cold winter birthday, you are full of sunshine. Like Arendelle’s princess, you are friendly, honest, and loyal. Sometimes eccentric, you may seem silly and spaced out to others, but your wild imagination fuels your desire to make the world a better place. You don’t care what others think about you, and you thrive on new experiences.');
+  }
+  else if(AstroSign == 'Cap'){
+    pic.src = 'images/tiana.png';
+    pic.alt = 'You are Tiana';
+    song = tianaAudio;
+    var titleContent = document.createTextNode( name_el.value + ', you are Tiana');
+    var pContent = document.createTextNode('As a Capricorn, you are an ambitious planner, and you probably have a big goal. Like Tiana never gave up on owning a restaurant, you work toward what you want step by step. Though some may think you’re harsh, you actually have a great sense of humor, and you always get the job done.');
   }
 
 
-  document.overlay.appendChild('pic');
-  document.overlay.appendChild('title');
-  document.overlay.appendChild('desc');
+
+  pic.classList.add('pic');
+  title.classList.add('title');
+  desc.classList.add('desc');
+
+  title.appendChild(titleContent);
+  desc.appendChild(pContent);
+
+  overlay.appendChild(pic);
+  overlay.appendChild(title);
+  overlay.appendChild(desc);
 
 
   //MAKE OVERLAY FADE IN
-  overlay.style.display = 'grid';
+  overlay.style.animation = '';
+  overlay.style.top = '0';
   overlay.classList.add('overlayTransition');
+  song.play();
 
 }
 
 
+//CLOSING THE OVERLAY WINDOW FUNCTION
+function closeWindow(){
+  overlay.style.animation = 'closeOverlay 1.5s linear forwards';
+  container.classList.add('containerTransitionReverse');
+  // const form = document.getElementById('myForm');
+  // form.addEventListener('submit', handleFormSubmit, false);
+  container.classList.remove('containerTransition');
+  container.classList.remove('containerTransitionReverse');
+  circle.classList.remove('circleTransition');
+
+  song.pause();
+
+  //Get rid of zodiac specifics
+  //vars to delete pic, desc, title, titleContent, pContent
+  // overlay.removeChild(pic);
+  // title.removeChild(titleContent);
+  // desc.removeChild(pContent);
+  // overlay.removeChild(desc);
+  // overlay.removeChild(title);
+
+  //DIFFERENT ATTEMPT
+  pic.src = '';
+  pic.alt = '';
+  title.innerHTML = '';
+  desc.innerHTML = '';  
+  
+  overlay.classList.remove('overlayTransition');
+  // overlay.style.opacity= '0';
+  overlay.style.top = '8000rem';
+  overlay.style.animation = '';
+
+}
+
+
+
+
+
+//CLOSING THE OVERLAY WINDOW
+var closeButton = document.getElementById('closeButton');
+closeButton.addEventListener("click", closeWindow, false);
+
+
+
+//DOING ALL THE STUFF WHEN YOU PRESS SUBMIT
 const form = document.getElementById('myForm');
 /* OR const form = document.forms['myForm']*/
 form.addEventListener('submit', handleFormSubmit, false);
 //form.addEventListener('change', handleFormSubmit, false);
+
 
 
 

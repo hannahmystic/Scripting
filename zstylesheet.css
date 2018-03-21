@@ -22,6 +22,7 @@ h2{
     font-weight: normal;
 }
 
+/* "[Name], you are _____"*/
 h3{
     font-family: "Arial Rounded MT Bold", "Helvetica Rounded", Arial, sans-serif;
     font-size: 1.875rem;
@@ -29,7 +30,6 @@ h3{
     margin: 0 auto;
     padding: 0;
     border: 0;
-    width: 4rem;
     text-align: center;
     font-weight: bold;
 }
@@ -38,9 +38,10 @@ p{
     font-family: "Arial Rounded MT Bold", "Helvetica Rounded", Arial, sans-serif;
     font-size: 1.125rem;
     color: #053757;
-
+    line-height: 1.5;
 }
 
+/*Just the question mark*/
 h4{
     font-size: 2.6rem;
     color: white;
@@ -51,6 +52,19 @@ h4{
     text-align: center;
     font-weight: bold;
     max-height: 2.6rem;
+}
+
+/*The word "help"*/
+h5{
+    font-family: "Arial Rounded MT Bold", "Helvetica Rounded", Arial, sans-serif;
+    font-size: 1.1rem;
+    color: white;
+    margin: 0 auto;
+    padding: 0;
+    border: 0;
+    width: 4rem;
+    text-align: center;
+    font-weight: normal;
 }
 
 html{
@@ -190,40 +204,106 @@ DISPLAY: GRID; IS WHAT MAKES IT WORK. */
 .overlay {
     opacity: 0;
     position: fixed; /* Sit on top of the page content */
-    display: none; /* Hidden by default */
+    display: grid; /* Hidden by default */
     width: 60.5vw; 
-    height: 25rem; 
-    top: 0; 
+    max-width: 48.75rem;
+    height: 27rem; 
+    top: 8000rem; 
     left: 0;
     right: 0;
     bottom: 0;
     margin: 3rem 0 0 15.3vw;
     background-color: #c3e4ed;
     border-radius: 1rem;
-    z-index: 2; /* Specify a stack order in case you're using a different order for other elements
-    cursor: pointer; Add a pointer on hover */
 
-    /*Change display from "none" to "grid", and these should apply.*/
     grid-template-columns: 1fr 2fr;
-    grid-template-rows: 25% auto;
+    grid-template-rows: 5% 20% auto;
     grid-gap: 1rem 1rem;
     grid-template-areas:
+        'picture closeButton'
         'picture title'
         'picture desc'; 
+    justify-content: space-around;
+
+    animation: none;
 }
 
+
+/* Open Overlay */
 .overlayTransition{
     opacity: 1;
     transition: opacity 1s linear 3s;
 }
 
+
+/* fade out home screen */
 .containerTransition{
     opacity: 0;
     transition: opacity 1s linear 2s;
 }
 
+/* fade in home screen */
+.containerTransitionReverse{
+    opacity: 1;
+    animation 1s linear .7s;
+}
 
-/* Overlay learned from https://www.w3schools.com/howto/howto_css_overlay.asp */
+.pic{
+    margin-top: .8rem;
+    margin-left: 1.5rem;
+    margin-right: 1rem;
+    max-width: 100%;
+    max-height: 90%;
+    object-fit: cover;
+    margin: auto;
+    /*align-self: center;*/
+    grid-area: picture;
+}
+
+.title{
+    grid-area: title;
+}
+
+.desc{
+    margin-right: 1.5rem;
+    grid-area: desc;
+}
+
+.closeButton{
+    justify-self: end;
+    align-self: end;
+    grid-area: closeButton;
+    background-color: #32004b;
+    color: white;
+    padding-top: .5rem;
+    font-size: 1rem;
+    font-family: "Arial Rounded MT Bold", "Helvetica Rounded", Arial, sans-serif;
+
+}
+
+@keyframes closeOverlay {
+    0%{
+        opacity: 1;
+        top: 0;
+    }
+    99%{
+        opacity: 0;
+        top: 0;
+    }
+    100%{
+        top: 8000rem;
+    }
+}
+
+
+/*_____________________________________
+|                                      |
+|               HELP BUTTON            | 
+|______________________________________|
+*/
+.helpers{
+    display: none;
+}
 
 
 
