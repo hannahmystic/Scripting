@@ -314,52 +314,31 @@ DISPLAY: GRID; IS WHAT MAKES IT WORK. */
 |______________________________________|
 */
 
-/*
-.pictures{
-    display: flex;
-    /*flex-wrap: nowrap;*/
-    flex-flow: row wrap;
 
-    /* justify-content: space-between;
-    align-items: baseline;
-    align-content: flex-end;
-    height: 29.3vh;
-    max-width: 9rem;
-    margin: 0;
-    padding: .1rem; */
-    }   
-  
-
-/*
-.pictures img{
+.icons{
     display: -ms-flexbox;
     -ms-flex-wrap: wrap;
-    -ms-flex-direction: column;
+    -ms-flex-direction: row;
     -webkit-flex-flow: row wrap;
     flex-flow: row wrap;
     display: -webkit-box;
     display: flex;
+ 
 
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: baseline;
     align-content: flex-end;
+    margin: 2rem;
 
-   
-    max-height: 29.3vh;
-    max-width: 9rem;
-    width: 100%;
-    height: auto;
-    vertical-align: middle;
-    margin: 0;
-    padding: .1rem;
-} 
-*/   
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 2rem;
 
-/*
-.anna {flex: .34404; }
-.ariel{ flex: .66939; }
-.aurora{ flex: .57074; }
-.belle{ flex: .41061; }
-.cinderella{ flex: .66994; }
-.mulan { flex: .30965; }
-*/
+    position: fixed;
+    bottom: 0;
+}   
+  
+.icons img{
+    max-width: 5%;
+    opacity: 1;
+    margin: .5rem 0;
+}
