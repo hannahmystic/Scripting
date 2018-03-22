@@ -24,7 +24,7 @@
             <h1>Which Disney Princess Are You?</h1>
         </div>
 
-
+        <!-- Loading Circle -->
         <div class="circle" id="circle">
             <img src="images/graphic.svg" alt="loading lotus" id="circleImage"> 
         </div>
@@ -34,7 +34,7 @@
             <h2>Enter your name and<br>birthday below to find out</h2>
       </div>
 
-      <div class="help">
+      <div class="help" id="help">
           <h4>?</h4>
           <h5>HELP</h5>
       </div>
@@ -45,14 +45,13 @@
             <form action="home.html" method="post" id="myForm" name="myForm">
                 <div class="control">
                     <label for="name"></label>
-                    <input type="text" id="name" name="name" placeholder="Name" value="Hannah" required>
+                    <input type="text" id="name" name="name" placeholder="Name" required>
                 </div>
 
-                <!-- To make it interactive, get rid of the "value" element -->
 
                 <div class="control">
                     <label for="date"></label>
-                    <input type="date" id="date" name="date" required>
+                    <input type="date" id="date" name="date" placeholder="mm/dd/yyyy" required>
                     <p class="feedback" hidden>Please enter a valid date.</p>
                 </div>
                 <div class="control">
@@ -63,28 +62,11 @@
 
         </div>
 
-        <div class="helpers">
-
-            <div class="helper1">
-                <h4>Enter your name here.</h4>
-            </div>
-
-            <div class="helper2">
-                <h4>Enter your birthday here, in the form mm/dd/yyyy. Ex: 03/14/1992</h4>
-            </div>
-
-            <div class="helper3">
-                <h4>Now that you have entered the correct information, press submit</h4>
-            </div>
-
-        </div>
-
-        <div class="alternateHelp">
-
-        </div>
-
     </div>
 
+
+  <!-- This is the overlay, where all the zodiac content goes.
+        It is added with JavaScript. -->
     <div class=overlay id="overlay">
         <!-- Individual content goes here -->
         <button type="button" class="closeButton" id="closeButton">
@@ -93,19 +75,18 @@
     </div>
 
 
+    <!--These are the little zodiac icons that span the bottom of the screen.-->
     <div class="icons">
-        <!--This is where all the baby zodiac icons are going to go.
-        They should be small and display across the bottom of the screen, in a flexbox row-wrap format.-->
         <img src="images/aries.png" alt="aries" id="ar">
         <img src="images/taurus.png" alt="taurus" id="ta">
         <img src="images/gemini.png" alt="gemini" id="ge">
-        <img src="images/cancer.png" alt="cancer" id="ca">
+        <img src="images/cancer.png" alt="cancer" id="canc">
         <img src="images/leo.png" alt="leo" id="le">
         <img src="images/virgo.png" alt="virgo" id="vi">
         <img src="images/libra.png" alt="libra" id="li">
         <img src="images/scorpio.png" alt="scorpio" id="sc">
         <img src="images/sagittarius.png" alt="sagittarius" id="sa">
-        <img src="images/capricorn.png" alt="capricorn" id="ca">
+        <img src="images/capricorn.png" alt="capricorn" id="capr">
         <img src="images/aquarius.png" alt="aquarius" id="aq">
         <img src="images/pisces.png" alt="pisces" id="pi">
     </div>

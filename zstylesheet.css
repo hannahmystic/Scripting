@@ -1,20 +1,25 @@
 *{ box-sizing: border-box; }
 
+/*_____________________________________
+|                                      |
+|                 GENERAL              | 
+|______________________________________|
+*/
 h1, h2{
     font-family: 'Ultra', serif;
     text-align: center;
     color: #2f3d6a;
 }
 
+/* Which Disney Princess Are You? */
 h1{
-    /* font-size: 2.5rem; */
     font-size: 2.9vw;
     margin: 0;
     padding: 0;
 }
 
+/* Enter your name.... */
 h2{
-    /* font-size: 1.875rem; */
     font-size: 2.2vw;
     margin: 0;
     padding: 0;
@@ -34,6 +39,7 @@ h3{
     font-weight: bold;
 }
 
+/* As a Sagittarius, you are awesome and... */
 p{
     font-family: "Arial Rounded MT Bold", "Helvetica Rounded", Arial, sans-serif;
     font-size: 1.125rem;
@@ -74,14 +80,6 @@ html{
     -o-background-size: cover;
     background-size: cover;
 }
-/* From https://css-tricks.com/perfect-full-page-background-image/ */
-
-/* body {
-    background-image: url("images/background.jpg");
-    background-color: #e2e5f4;
-    background-repeat: no-repeat;
-    background-size: cover;
- } */
 
 
 
@@ -106,7 +104,6 @@ html{
 }
 
 .title{
-    /* width: 54rem; */
     margin: 0;
     padding: 0 0 1rem 0;
 
@@ -116,7 +113,7 @@ html{
 }
 
 .subtitle{
-    /* width: 58rem; */
+    min-width: 300px;
     margin: 0;
     padding: 0;
     padding-left: 2rem;
@@ -180,14 +177,7 @@ input{
 }
 
 .circleTransition{
-    /*max-width: 10.6rem;
-    max-height:10.6rem;
-    */
-    /* border: 0;
-    margin: 0;
-    padding: 0; */
     transition: 2s ease-in-out .5s;
-    /*transform-origin: 50% 37%;*/
     transform: rotate(1800deg);
   }
 
@@ -198,16 +188,16 @@ input{
 */
 
 /* WHEN THE TEXT IS SUBMITTED, THE ANIMATION PLAYS, 
-AND DISPLAY IS SET TO 'GRID'.
-DISPLAY: GRID; IS WHAT MAKES IT WORK. */
+THE REGULAR CONTENT FADES OUT, AND THE OVERLAY FADES IN */
 
 .overlay {
     opacity: 0;
-    position: fixed; /* Sit on top of the page content */
-    display: grid; /* Hidden by default */
+    position: fixed; 
+    display: grid; 
     width: 60.5vw; 
     max-width: 48.75rem;
-    height: 27rem; 
+    min-width: 450px;
+    height: 28.5rem; 
     top: 8000rem; 
     left: 0;
     right: 0;
@@ -217,7 +207,7 @@ DISPLAY: GRID; IS WHAT MAKES IT WORK. */
     border-radius: 1rem;
 
     grid-template-columns: 1fr 2fr;
-    grid-template-rows: 5% 20% auto;
+    grid-template-rows: 5% 17% auto;
     grid-gap: 1rem 1rem;
     grid-template-areas:
         'picture closeButton'
@@ -256,11 +246,11 @@ DISPLAY: GRID; IS WHAT MAKES IT WORK. */
     max-height: 90%;
     object-fit: cover;
     margin: auto;
-    /*align-self: center;*/
     grid-area: picture;
 }
 
 .title{
+    align-self: end;
     grid-area: title;
 }
 
@@ -296,16 +286,6 @@ DISPLAY: GRID; IS WHAT MAKES IT WORK. */
 }
 
 
-/*_____________________________________
-|                                      |
-|               HELP BUTTON            | 
-|______________________________________|
-*/
-.helpers{
-    display: none;
-}
-
-
 
 
 /*_____________________________________
@@ -313,7 +293,6 @@ DISPLAY: GRID; IS WHAT MAKES IT WORK. */
 |             FLEX-BOX IMAGES          | 
 |______________________________________|
 */
-
 
 .icons{
     display: -ms-flexbox;
